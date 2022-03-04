@@ -12,16 +12,24 @@
       <h1>GitHub User Finder</h1>
     </header>
     <main class="container">
-      <div class="root flex justify-center align-center column">
-        <input
-          type="text"
-          name="search"
-          id="search"
-          placeholder="GitHub username"
-        />
+      <input
+        type="text"
+        name="search"
+        id="search"
+        placeholder="GitHub username"
+      />
+      <div class="root flex justify-center align-center column"></div>
+      <div class="lists">
+        <ul class="followerClass flex align-center"></ul>
+        <ul class="followingClass flex align-center"></ul>
       </div>
-      <ul class="followerClass flex align-center"></ul>
-      <ul class="followingClass flex align-center"></ul>
+      <div class="second">
+        <h4>Random Cat Generator</h4>
+        <figure class="cats">
+          <img src="https://cdn2.thecatapi.com/images/22d.jpg" alt="cat" />
+        </figure>
+        <button>Get Random Cat</button>
+      </div>
     </main>
     <script src="index.js"></script>
   </body>

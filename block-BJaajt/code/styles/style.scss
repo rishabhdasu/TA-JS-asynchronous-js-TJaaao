@@ -9,9 +9,12 @@ header {
   text-align: center;
   margin-bottom: 3rem;
 }
+.first {
+}
 .root {
   width: 100%;
   text-align: center;
+  margin-bottom: 2rem;
 }
 input {
   display: block;
@@ -28,12 +31,10 @@ input {
 ::placeholder {
   color: rgb(194, 195, 169);
 }
-.figure,
-.figure1,
-.figure2 {
-  width: 6rem;
-  height: 6rem;
-  margin: 1rem;
+.figure {
+  width: 5rem;
+  height: 5rem;
+  margin: 1.5rem;
   img {
     width: 100%;
     border-radius: 50%;
@@ -51,4 +52,41 @@ h3 {
 .followerClass,
 .followingClass {
   font-size: 1.5rem;
+}
+
+.second {
+  text-align: center;
+  background-color: rgb(22, 27, 34);
+}
+h4 {
+  color: white;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+.cats {
+  margin: 0 auto;
+  width: 30rem;
+  border: 1px solid white;
+  img {
+    width: 100%;
+    font: 0;
+    display: block;
+  }
+}
+button {
+  background-color: rgb(35, 40, 46);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 2rem;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+  &:hover {
+    border: 1px solid white;
+    background-color: rgb(69, 73, 80);
+    cursor: pointer;
+  }
 }
