@@ -272,6 +272,7 @@ header {
 .root {
   width: 100%;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 input {
@@ -302,17 +303,13 @@ input {
   color: #c2c3a9;
 }
 
-.figure,
-.figure1,
-.figure2 {
-  width: 6rem;
-  height: 6rem;
-  margin: 1rem;
+.figure {
+  width: 5rem;
+  height: 5rem;
+  margin: 1.5rem;
 }
 
-.figure img,
-.figure1 img,
-.figure2 img {
+.figure img {
   width: 100%;
   border-radius: 50%;
 }
@@ -331,5 +328,47 @@ h3 {
 .followerClass,
 .followingClass {
   font-size: 1.5rem;
+}
+
+.second {
+  text-align: center;
+  background-color: #161b22;
+}
+
+h4 {
+  color: white;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.cats {
+  margin: 0 auto;
+  width: 30rem;
+  border: 1px solid white;
+}
+
+.cats img {
+  width: 100%;
+  font: 0;
+  display: block;
+}
+
+button {
+  background-color: #23282e;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 2rem;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+}
+
+button:hover {
+  border: 1px solid white;
+  background-color: #454950;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
