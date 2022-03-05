@@ -1,0 +1,92 @@
+@import "reset";
+@import "general";
+@import "flex";
+header {
+  background-color: rgb(22, 27, 34);
+  color: white;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.first {
+}
+.root {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+input {
+  display: block;
+  border: 1px solid rgb(48, 54, 61);
+  padding: 1rem 1.5rem;
+  border-radius: 0.4rem;
+  width: 40%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  color: white;
+  background-color: rgb(13, 17, 23);
+}
+
+::placeholder {
+  color: rgb(194, 195, 169);
+}
+.figure {
+  width: 5rem;
+  height: 5rem;
+  margin: 1.5rem;
+  img {
+    width: 100%;
+    border-radius: 50%;
+  }
+}
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+h3 {
+  text-decoration: underline;
+  font-size: 1.2rem;
+  color: rgb(23, 112, 240);
+}
+.followerClass,
+.followingClass {
+  font-size: 1.5rem;
+}
+
+.second {
+  text-align: center;
+  background-color: rgb(22, 27, 34);
+}
+h4 {
+  color: white;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+.cats {
+  margin: 0 auto;
+  width: 30rem;
+  border: 1px solid white;
+  img {
+    width: 100%;
+    font: 0;
+    display: block;
+  }
+}
+button {
+  background-color: rgb(35, 40, 46);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 2rem;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+  &:hover {
+    border: 1px solid white;
+    background-color: rgb(69, 73, 80);
+    cursor: pointer;
+  }
+}

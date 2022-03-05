@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Fetching Data</title>
+  </head>
+  <body>
+    <header>
+      <h1>GitHub User Finder</h1>
+    </header>
+    <main class="container">
+      <input
+        type="text"
+        name="search"
+        id="search"
+        placeholder="GitHub username"
+      />
+      <div class="root flex justify-center align-center column"></div>
+      <div class="lists">
+        <ul class="followerClass flex align-center"></ul>
+        <ul class="followingClass flex align-center"></ul>
+      </div>
+      <div class="second">
+        <h4>Random Cat Generator</h4>
+        <figure class="cats">
+          <img src="https://cdn2.thecatapi.com/images/22d.jpg" alt="cat" />
+        </figure>
+        <button>Get Random Cat</button>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
