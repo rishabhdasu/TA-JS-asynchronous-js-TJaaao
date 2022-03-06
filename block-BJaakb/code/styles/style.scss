@@ -1,0 +1,28 @@
+@import "reset";
+@import "general";
+@import "flex";
+
+header {
+  text-align: center;
+  background-color: rgb(31, 39, 53);
+  color: white;
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+}
+input {
+  border: 1px solid gray;
+  width: 40%;
+  padding: 1rem;
+  border: 2px solid rgba(8, 115, 238, 0.788);
+  border-radius: 0.4rem;
+  font-size: 1.2rem;
+  outline: none;
+}
+.div {
+  margin-top: 3rem;
+  img {
+    width: 100%;
+    border: 1px solid rgb(240, 39, 73);
+  }
+}
