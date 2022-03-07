@@ -6,7 +6,8 @@ let promise = new Promise((resolve) => {
   setTimeout(() => {
     resolve("Promise Resolved!");
   }, 1000);
-}).then((value) => console.log(value));
+});
+promise.then(console.log);
 ```
 
 2. Create another promise. Now have it reject with a value of `Rejected Promise!` without using `setTimeout`. Print the contents of the promise after it has been rejected by passing console.log to `.catch`
@@ -15,7 +16,8 @@ let promise = new Promise((resolve) => {
 // Your code
 let promise = new Promise((reject) => {
   reject("PromRejectedise Resolved!");
-}).catch((value) => console.log(value));
+});
+promise.catch(console.log);
 ```
 
 3. Create another promise. Now have it reject with a value of `Rejected Promise!` without using `setTimeout`. Print the contents of the promise after it has been rejected by passing console.log to `.catch` and also use `.finally` to log message `Promise Settled!`.
@@ -24,9 +26,8 @@ let promise = new Promise((reject) => {
 // Your code
 let promise = new Promise((reject) => {
   reject("PromRejectedise Resolved!");
-})
-  .catch((value) => console.log(value))
-  .finally(console.log("Promise Settled!"));
+});
+promise.catch(console.log).finally(() => console.log("Promise Settled!"));
 ```
 
 4. What will be the output of the code below.
@@ -47,8 +48,8 @@ console.log("D");
 //D
 ```
 
-First 'A' will be logged as it has been called first and it is a JS function.
-Then 'D' will be logged, though it has been called last in the code but since it is another JS function after 'A' is logged.
+First 'A' will be logged as it has been called first and it is a synchronous JS function.
+Then 'D' will be logged, though it has been called last in the code but since it is another synchronous JS function after 'A' is logged.
 Then 'C' will be logged as Promises are stored in the microtask queues whereas setTimeouts are WEB APIs and they are stored in the callback queues and when they are moved from their queues to the call stack, the event loop gives priority to the microtask queue over callback queues. So after 'C' is logged then at last 'B' will be logged
 
 5. Write a function named `wait` that accepts `time` in ms returns a promise. The promise gets resolved after given time.
@@ -56,8 +57,10 @@ Then 'C' will be logged as Promises are stored in the microtask queues whereas s
 ```js
 // Your code
 function wait(time) {
-  return new Promise((resolved) => {
-    setTimeout(() => {}, time);
+  return new Promise((resolved, rej) => {
+    setTimeout(() => {
+      resolve(`Promise Resolved`);
+    }, time);
   });
 }
 ```
@@ -83,9 +86,11 @@ let promise = new Promise((resolve) => {
     return val + 100;
   })
   .then((v) => {
-    return v > 100;
+    if (v > 100) {
+      throw new Error("Something went wrong");
+    }
   })
-  .catch((error) => console.log("Value is not greater"));
+  .catch(console.log);
 ```
 
 7. Do the following:
@@ -98,14 +103,17 @@ let promise = new Promise((resolve) => {
 
 ```js
 // Your code
-let promise = new Promise((res) => {
-  res("A");
+let promise = new Promise((res, rej) => {
+  res(["A"]);
 })
   .then((val) => {
-    return val + "B";
+    return val.concat("B");
   })
   .then((val) => {
-    return new Object(val);
+    return val.reduce((acc, cv, i) => {
+      acc[i] = cv;
+      return acc;
+    }, {});
   })
   .then((val) => console.log(val));
 ```
@@ -119,6 +127,22 @@ let promise = new Promise((res) => {
 
 ```js
 // Your code
+let first = new Promise((res, rej) => {
+  res(1);
+});
+first
+  .then((val) => {
+    console.log(val);
+    return 2;
+  })
+  .then((val) => {
+    console.log(val);
+    return 3;
+  })
+  .then((val) => {
+    console.log(val);
+    return 4;
+  });
 ```
 
 9. Do the following:
@@ -130,6 +154,21 @@ let promise = new Promise((res) => {
 
 ```js
 // Your code
+let first = new Promise((res, rej) => {
+  res(1);
+});
+first.then((val) => {
+  console.log(val);
+  return 2;
+});
+first.then((val) => {
+  console.log(val);
+  return 3;
+});
+first.then((val) => {
+  console.log(val);
+  return 4;
+});
 ```
 
 10. Try to understand the difference between the problem 8 and 9. Write your observation.
@@ -143,4 +182,19 @@ let promise = new Promise((res) => {
 
 ```js
 // Your code
+let user = new Promise((resol, rej) => {
+  resol("John");
+})
+  .then((val) => {
+    return Promise.resolve("Arya");
+  })
+  .then((v) => {
+    console.log(v);
+    return new Promise((res) => {
+      setTimeout(() => {
+        res("Bran");
+      }, 1000);
+    });
+  })
+  .then(console.log);
 ```
