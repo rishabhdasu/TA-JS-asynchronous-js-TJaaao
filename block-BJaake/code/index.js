@@ -1,8 +1,9 @@
 let select = document.getElementById("sources");
 let display = document.querySelector(".display");
-let filterData;
+let allNews = [];
 
 function createUI(data) {
+  display.innerHTML = "";
   data.forEach((obj) => {
     let figure = document.createElement("figure");
     figure.classList.add("flex-48");
@@ -27,27 +28,34 @@ function createUI(data) {
   });
 }
 
-function handleSelect(e) {
-  let url = "https://api.spaceflightnewsapi.net/v3/articles?_limit=30";
-  fetch(url).then(createUI);
-}
-function fetch(url) {
-  return new Promise((resolve, reject) => {
-    let xhr = new XMLHttpRequest();
-    xhr.open(`GET`, url);
-    xhr.onload = () => resolve(JSON.parse(xhr.response));
-    xhr.onerror = () => reject("Something went wrong");
-    xhr.send();
+let url = "https://api.spaceflightnewsapi.net/v3/articles?_limit=30";
+
+function createSources(data) {
+  data.forEach((source) => {
+    let option = document.createElement("option");
+    option.innerText = source;
+    option.value = source;
+    select.append(option);
   });
 }
 
-fetch("https://api.spaceflightnewsapi.net/v3/articles?_limit=30").then(
-  (data) => {
-    data.forEach((obj) => {
-      let option = document.createElement("option");
-      option.innerText = obj.newsSite;
-      select.append(option);
-    });
+fetch(url)
+  .then((res) => res.json())
+  .then((data) => {
+    allNews = data;
+    createUI(data);
+    let sources = Array.from(new Set(data.map((n) => n.newsSite)));
+    createSources(sources);
+  });
+
+function handleSelect(e) {
+  let source = e.target.value.trim();
+  if (source) {
+    var filteredNews = allNews.filter((news) => news.newsSite === source);
+  } else {
+    filteredNews = allNews;
   }
-);
+  createUI(filteredNews);
+}
+
 select.addEventListener("change", handleSelect);
