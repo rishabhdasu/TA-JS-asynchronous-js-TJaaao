@@ -21,8 +21,10 @@ select {
   margin: 3rem auto;
   text-align: center;
   border-radius: 0.4rem;
-  border: 1px solid gray;
-  padding: 0.4rem 1rem;
+  padding: 0.6rem 1rem;
+  border: none;
+  outline: none;
+  background-color: rgb(228, 226, 226);
 }
 .display {
   margin: 6rem auto;
