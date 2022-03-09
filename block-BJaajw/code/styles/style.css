@@ -279,7 +279,7 @@ header {
 select {
   display: block;
   width: 40%;
-  margin: 3rem auto;
+  margin: 2rem auto;
   text-align: center;
   border-radius: 0.4rem;
   padding: 0.6rem 1rem;
@@ -316,5 +316,55 @@ li a {
   color: white;
   padding: 0.3rem 1rem;
   float: right;
+}
+
+.error-message {
+  text-align: center;
+  margin-top: 6rem;
+  color: red;
+  font-size: 1.5rem;
+  display: none;
+}
+
+.spinner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@-webkit-keyframes donut-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes donut-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.donut {
+  display: inline-block;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #7983ff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  -webkit-animation: donut-spin 1.2s linear infinite;
+          animation: donut-spin 1.2s linear infinite;
 }
 /*# sourceMappingURL=style.css.map */
