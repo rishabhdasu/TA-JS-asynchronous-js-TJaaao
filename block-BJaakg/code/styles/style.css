@@ -1,0 +1,343 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* FLEX */
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.justify-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.justify-around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.align-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.align-start {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.flex-50 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  line-height: 1.3;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input,
+select {
+  border: 0;
+  font-family: "Raleway", sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 0 2rem;
+}
+
+.padding {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.full {
+  width: 100%;
+}
+
+.font-0 {
+  font: 0;
+}
+
+.block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.scroll-none::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: #745eb2;
+}
+
+.wrapper {
+  position: relative;
+}
+
+header {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.root {
+  background-color: white;
+}
+
+li {
+  border: 1.5px dashed #ee7157;
+  padding: 2rem;
+}
+
+li h2 {
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+
+li h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+li button {
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+}
+
+.root2 {
+  width: 100%;
+  background-color: #3b898a;
+  border-radius: 0.4rem;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+.root2 h4 {
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 800;
+  margin: 2rem 0;
+}
+
+.root2 p {
+  color: white;
+  border: 1px solid white;
+  font-size: 1.2rem;
+  padding: 1.5rem 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.root2 .close {
+  color: black;
+  float: right;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
